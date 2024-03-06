@@ -73,8 +73,7 @@ exports.average_temp = (cities) => {
 }
 
 exports.warmer_average_temp = (cities) => {
-
-    let temperaturaMedia = this.average_temp(cities);
+    let temperaturaMedia = average_temp(cities);
     //filter
     let ciudadesTempMayoresMedia = cities.filter((ciudad) => {
         return ciudad.temp > temperaturaMedia;
