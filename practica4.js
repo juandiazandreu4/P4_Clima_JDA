@@ -63,9 +63,28 @@ exports.min_temp_max = (cities) => {
 
 exports.average_temp = (cities) => {
     let valorInicialAcumulador = 0;
-    let sumaTemperaturas = cities.reduce((temperaturaAcumulada, ciudad) => {
-        return temperaturaAcumulada =+ ciudad.main.temp;
-    }, valorInicialAcumulador);
+    let sumaTemperaturas = cities.reduce(
+        (temperaturaAcumulada, ciudad) => {
+        return temperaturaAcumulada = temperaturaAcumulada + ciudad.main.temp;
+        }, valorInicialAcumulador
+    );
     let numeroCiudades = cities.length;
     return sumaTemperaturas/numeroCiudades;
 }
+
+exports.warmer_average_temp = (cities) => {
+
+    let temperaturaMedia = this.average_temp(cities);
+    //filter
+    let valorInicialAcumulador = 0;
+    let ciudadesTempMayoresMedia = cities.filter((ciudad) => {
+        return ciudad.temp > temperaturaMedia;
+        }
+    );
+    //map
+    let ciudadesNombreTempMayoresMedia = ciudadesTempMayoresMedia.map((ciudad) => {
+    return ciudad.name;
+    });
+
+    return ciudadesNombreTempMayoresMedia;
+};
