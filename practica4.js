@@ -45,7 +45,8 @@ exports.max_temp_min = (cities) => {
     });
     return maxminTemperatura;
 }
-/**
+
+
 exports.min_temp_max = (cities) => {
     if (cities.length === 0) {
         return null; //por si detecta un cities vacio
@@ -59,4 +60,4 @@ exports.min_temp_max = (cities) => {
     });
     return minMaxTemperatura;
 }
-*/
+
