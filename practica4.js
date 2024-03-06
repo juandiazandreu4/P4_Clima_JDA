@@ -61,3 +61,11 @@ exports.min_temp_max = (cities) => {
     return minMaxTemperatura;
 }
 
+exports.average_temp = (cities) => {
+    let valorInicialAcumulador = 0;
+    let sumaTemperaturas = cities.reduce((temperaturaAcumulada, ciudad) => {
+        return temperaturaAcumulada =+ ciudad.main.temp;
+    }, valorInicialAcumulador);
+    let numeroCiudades = ciudad.length;
+    return sumaTemperaturas/numeroCiudades;
+}
