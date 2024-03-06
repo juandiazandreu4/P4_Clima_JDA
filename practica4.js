@@ -66,6 +66,6 @@ exports.average_temp = (cities) => {
     let sumaTemperaturas = cities.reduce((temperaturaAcumulada, ciudad) => {
         return temperaturaAcumulada =+ ciudad.main.temp;
     }, valorInicialAcumulador);
-    let numeroCiudades = ciudad.length;
+    let numeroCiudades = cities.length;
     return sumaTemperaturas/numeroCiudades;
 }
