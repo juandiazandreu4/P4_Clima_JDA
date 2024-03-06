@@ -1,4 +1,4 @@
-
+const fs = require('fs')
 
 exports.load = (claseFilename) => {
     var valor = JSON.parse(fs.readFileSync(claseFilename))
