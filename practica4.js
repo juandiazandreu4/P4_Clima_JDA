@@ -88,7 +88,20 @@ exports.warmer_average_temp = (cities) => {
 };
 
 exports.max_north = (cities) => {
-
+    if (cities.length === 0) {
+        return null; //por si detecta un cities vacio
+    }
+    let mayorLatitud = cities[0].coord.lat;
+    let ciudadMasNorte = cities[0].name;
+    cities.forEach((city) => {
+        let latitudCiudad = city.coord.lat;
+        let nombreCiudad = city.name;
+        if (latitudCiudad > mayorLatitud){
+            mayorLatitud = latitudCiudad;
+            ciudadMasNorte = nombreCiudad;
+        }
+    });
+    return ciudadMasNorte;
 };
 
 exports.max_south = (cities) => {
