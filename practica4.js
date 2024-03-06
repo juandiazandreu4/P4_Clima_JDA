@@ -31,3 +31,32 @@ exports.min_temp = (cities) => {
     });
     return minimaTemperatura;
 }
+
+exports.max_temp_min = (cities) => {
+    if (cities.length === 0) {
+        return null; //por si detecta un cities vacio
+    }
+    let maxMinTemperatura = cities[0].main.temp_min;
+    cities.forEach((city) => {
+        let temperaturaCiudad = city.temp_min;
+        if (temperaturaCiudad > maxMinTemperatura){
+            maxMinTemperatura = temperaturaCiudad;
+        }
+    });
+    return maxminTemperatura;
+}
+/**
+exports.min_temp_max = (cities) => {
+    if (cities.length === 0) {
+        return null; //por si detecta un cities vacio
+    }
+    let minMaxTemperatura = cities[0].main.temp_max;
+    cities.forEach((city) => {
+        let temperaturaCiudad = city.temp_max;
+        if (temperaturaCiudad < minMaxTemperatura){
+            minMaxTemperatura = temperaturaCiudad;
+        }
+    });
+    return minMaxTemperatura;
+}
+*/
