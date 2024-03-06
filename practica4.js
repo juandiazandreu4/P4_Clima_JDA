@@ -88,3 +88,19 @@ exports.warmer_average_temp = (cities) => {
 
     return ciudadesNombreTempMayoresMedia;
 };
+
+exports.max_north = (cities) => {
+
+};
+
+exports.max_south = (cities) => {
+
+};
+
+exports.gravity_center = (cities) => {
+
+};
+
+exports.closest_GC = (cities) => {
+
+};
