@@ -105,6 +105,23 @@ exports.max_north = (cities) => {
 };
 
 exports.max_south = (cities) => {
+    if (cities.length === 0) {
+        return null; //por si detecta un cities vacio
+    }
+    let menorLatitud = cities[0].coord.lat;
+    let ciudadMasSur = cities[0].name;
+    cities.forEach((city) => {
+        let latitudCiudad = city.coord.lat;
+        let nombreCiudad = city.name;
+        if (latitudCiudad < menorLatitud){
+            menorLatitud = latitudCiudad;
+            ciudadMasSur = nombreCiudad;
+        }
+    });
+    return ciudadMasSur;
+};
+
+exports.max_south = (cities) => {
 
 };
 
