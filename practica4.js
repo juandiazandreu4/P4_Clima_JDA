@@ -1,8 +1,9 @@
+
+
 exports.load = (claseFilename) => {
-    var valor = JSON.parse(claseFilename)
+    var valor = JSON.parse(fs.readFileSync(claseFilename))
     return valor;
 }
-
 
 exports.max_temp = (cities) => {
     if (cities.length === 0) {
@@ -45,7 +46,6 @@ exports.max_temp_min = (cities) => {
     });
     return maxminTemperatura;
 }
-
 
 exports.min_temp_max = (cities) => {
     if (cities.length === 0) {
