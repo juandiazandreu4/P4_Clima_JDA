@@ -121,8 +121,31 @@ exports.max_south = (cities) => {
     return ciudadMasSur;
 };
 
-exports.gravity_center = (cities) => {
+exports.gravity_center = (cities) => { 
+    //recorrer cities y sumar latitudes y longitudes, luego dividir por el numero de ciudades
+    //y meterlos en un objeto
+    let valorInicialAcumuladorLatitud = 0;
+    let sumaLatitud = cities.reduce(
+        (latitudAcumulada, ciudad) => {
+        return latitudAcumulada = latitudAcumulada + ciudad.coord.lat;
+        }, valorInicialAcumuladorLatitud
+    );
 
+    let valorInicialAcumuladorLongitud = 0;
+    let sumaLongitud = cities.reduce(
+        (longitudAcumulada, ciudad) => {
+        return longitudAcumulada = longitudAcumulada + ciudad.coord.lon;
+        }, valorInicialAcumuladorLongitud
+    );
+
+    let numeroCiudades = cities.length;
+    let mediaLatitud = sumaLatitud/numeroCiudades;
+    let mediaLongitud= sumaLongitud/numeroCiudades;
+    let centroGravedad = {
+        lat: mediaLatitud,
+        lon: mediaLongitud
+    };
+    return centroGravedad;
 };
 
 exports.closest_GC = (cities) => {
