@@ -121,10 +121,6 @@ exports.max_south = (cities) => {
     return ciudadMasSur;
 };
 
-exports.max_south = (cities) => {
-
-};
-
 exports.gravity_center = (cities) => {
 
 };
