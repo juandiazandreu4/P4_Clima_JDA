@@ -44,7 +44,7 @@ exports.max_temp_min = (cities) => {
             maxMinTemperatura = temperaturaCiudad;
         }
     });
-    return maxminTemperatura;
+    return maxMinTemperatura;
 }
 
 exports.min_temp_max = (cities) => {
@@ -76,7 +76,6 @@ exports.warmer_average_temp = (cities) => {
 
     let temperaturaMedia = this.average_temp(cities);
     //filter
-    let valorInicialAcumulador = 0;
     let ciudadesTempMayoresMedia = cities.filter((ciudad) => {
         return ciudad.temp > temperaturaMedia;
         }
